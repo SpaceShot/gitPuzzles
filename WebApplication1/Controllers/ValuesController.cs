@@ -9,10 +9,19 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        public ValuesController(IFooService fooService)
+        {
+            _fooService = fooService;
+        }
+
+        private IFooService _fooService;
+
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            var result = _fooService.GetBaz();
+
             return new string[] { "value1", "value2" };
         }
 
