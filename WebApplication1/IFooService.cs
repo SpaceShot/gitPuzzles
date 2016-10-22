@@ -3,5 +3,7 @@
     public interface IFooService
     {
         object GetBaz();
+        object GetABaz(int id);
+        object PostBaz(string value);
     }
 }

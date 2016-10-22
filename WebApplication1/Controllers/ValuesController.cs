@@ -29,6 +29,8 @@ namespace WebApplication1.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
+            var result = _fooService.GetABaz(id);
+
             return "value";
         }
 
@@ -36,12 +38,16 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public void Post([FromBody]string value)
         {
+
+            var result = _fooService.PostBaz(value);
+
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
+
         }
 
         // DELETE api/values/5
